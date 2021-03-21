@@ -1,1 +1,2 @@
 # Learning Platform
+### Cíle projektu
