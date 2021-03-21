@@ -1,0 +1,26 @@
+<h1>Register</h1>
+<form method="POST">
+    <div>
+        <label for="first">Jméno</label>
+        <input type="text" name="first" id="first" value="<%= typeof first !== "undefined" ? first : "" %>">
+    </div>  
+    <div>
+        <label for="last">Přijmení</label>
+        <input type="text" name="last" id="last" value="<%= typeof last !== "undefined" ? last : "" %>">
+    </div>  
+    <div>
+        <label for="email">E-mailová Adresa</label>
+        <input type="email" name="email" id="email" value="<%= typeof email !== "undefined" ? email : "" %>">
+    </div>  
+    <div>
+        <label for="password">Heslo</label>
+        <input type="password" name="password" id="password">
+    </div>  
+    <div>
+        <label for="password2">Heslo Znovu</label>
+        <input type="password" name="password2" id="password2">
+    </div>  
+    <input type="submit">
+    <%- include("../partials/messages") %>
+</form>
+

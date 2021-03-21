@@ -5,7 +5,7 @@ const expressLayouts = require("express-ejs-layouts");
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
-const { ensureAuthenticated, isAdmin } = require("./config/auth")
+const { ensureAuthenticated, isAdmin, isNotUser } = require("./config/auth")
 
 require("dotenv").config()
 
@@ -31,8 +31,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, "public")));
 
 // Ejs 
-// app.use(expressLayouts())
-// app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("view engine", "ejs")
 
 // Express Session
 app.use(session({
@@ -58,9 +58,10 @@ app.use((req, res, next) => {
 })
 
 // Routes
-app.use("/user", require("./routes/UserRoutes"))
-app.use("/dashboard", ensureAuthenticated, require("./routes/DashboadRoutes"))
-app.use("/admin", isAdmin, require("./routes/AdminRoutes"))
+app.use("/user", require("./routes/UserRoutes"));
+app.use("/dashboard", ensureAuthenticated, require("./routes/DashboadRoutes"));
+app.use("/admin", isAdmin, require("./routes/AdminRoutes"));
+app.use("/", (req, res) => res.status(404).send("Not Found 404"))
 
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)

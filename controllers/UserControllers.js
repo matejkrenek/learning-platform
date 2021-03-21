@@ -4,8 +4,13 @@ const passport = require("passport")
 
 module.exports = {
     getLogin: (req, res) => {
-        res.send([res.locals.success_msg, res.locals.error_msg, res.locals.error, req.user])
+        res.render("user/login")
     },
+
+    getRegister: (req, res) => {
+        res.render("user/register")
+    },
+
     registerUser: (req, res) => {
         const { first, last, email, password, password2 } = req.body;
         let errors = []
@@ -26,7 +31,7 @@ module.exports = {
         }
 
         if(errors.length > 0){
-            res.status(400).json({
+            res.render("user/register", {
                 errors,
                 first,
                 last,
@@ -37,7 +42,7 @@ module.exports = {
                 if(user){
                     // User already exists
                     errors.push({ msg: "Uživatel s touto emailovou adresou již existuje" })
-                    res.status(400).json({
+                    res.render("user/register", {
                         errors,
                         first,
                         last,
@@ -72,10 +77,17 @@ module.exports = {
     },
 
     loginUser: (req, res, next) => {
+        const {email, password} = req.body
+
+        if(!email || !password){
+
+        }
+
+        if()
         passport.authenticate("local", {
             successRedirect: "/dashboard",
             failureRedirect: "/user/login",
-            failureFlash: true
+            failureFlash: true,
         })(req, res, next);
     },
 

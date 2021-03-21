@@ -15,5 +15,14 @@ module.exports = {
 
         req.flash("error_msg", "Nemáte dostatečné pravomoce")
         res.redirect("/dashboard")
+    },
+
+    isNotUser: (req, res, next) => {
+        if(req.user === undefined){
+            return next()
+        }
+        res.redirect("/dashboard")
     }
+
+
 }

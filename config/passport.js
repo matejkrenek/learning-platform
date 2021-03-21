@@ -32,12 +32,12 @@ module.exports = (passport) => {
     );
 
     passport.serializeUser((user, done) => {
-        done(null, user.id);
+        done(null, user.id, { message: "Heslo je nesprávné" });
     });
 
     passport.deserializeUser((id, done) => {
         User.findById(id, (err, user) => {
-            done(err, user)
+            done(err, user, { message: "Heslo je nesprávné" })
         });
     });
 }
