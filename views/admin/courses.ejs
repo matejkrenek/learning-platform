@@ -1,0 +1,25 @@
+<h1>courses</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Název</th>
+            <th>Obtížnost</th>
+            <th>Požadavky</th>
+            <th>Description</th>
+            <th>Obrázek</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% courses.forEach(course => { %>
+            <tr>
+                <td><%= course._id %></td>
+                <td><%= course.title %></td>
+                <td><%= course.difficulty %></td>
+                <td><%= course.requirements %></td>
+                <td><%= course.description %></td>
+                <td><img src="<%= course.previewImage %>" alt="" class="small--img"></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

@@ -17,7 +17,7 @@ module.exports = {
 
         // Check required fields
         if(!first || !last || !email || !password || !password2){
-            errors.push({ msg: "Vyplňte prosím všechna povinná pole" })
+            errors.push({ msg: "Vyplňte prosím všechna pole" })
         }
 
         // Check passwords match
@@ -77,15 +77,8 @@ module.exports = {
     },
 
     loginUser: (req, res, next) => {
-        const {email, password} = req.body
-
-        if(!email || !password){
-
-        }
-
-        if()
         passport.authenticate("local", {
-            successRedirect: "/dashboard",
+            successRedirect: req.user === "admin" ? "/admin" : "/dashboard",
             failureRedirect: "/user/login",
             failureFlash: true,
         })(req, res, next);

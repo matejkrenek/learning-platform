@@ -18,12 +18,21 @@ const CourseSchema = new Schema({
         type: String
     },
 
+    previewImage: {
+        type: String
+    },
+
+    date: {
+        type: Date,
+        default: new Date()
+    },
+
     sections: [
         {
             type: Schema.Types.ObjectId,
             ref: "section"
         }
-    ]
+    ],
 });
 
 module.exports = mongoose.model("course", CourseSchema)

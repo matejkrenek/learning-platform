@@ -1,0 +1,25 @@
+<h1>Create your course</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="title">Název</label>
+        <input type="text" name="title" id="title" value="<%= typeof title !== "undefined" ? title : "" %>">
+    </div>  
+    <div>
+        <label for="difficulty">Obtížnost</label>
+        <input type="text" name="difficulty" id="difficulty" value="<%= typeof difficulty !== "undefined" ? difficulty : "" %>">
+    </div> 
+    <div>
+        <label for="preview">Náhled</label>
+        <input type="file" name="preview" id="preview">
+    </div> 
+    <div>
+        <label for="requirements">Požadavky</label>
+        <input type="text" name="requirements" id="requirements" value="<%= typeof requirements !== "undefined" ? requirements : "" %>">
+    </div>  
+    <div>
+        <label for="description">Popis</label>
+        <textarea name="description" id="description"><%= typeof description !== "undefined" ? description : "" %></textarea>
+    </div>  
+    <input type="submit">
+    <%- include("../partials/messages") %>
+</form>
