@@ -5,8 +5,6 @@ link na projekt: https://github.com/users/matejkrenek/projects/2
 - Express
 - MongoDB
 - Passport
-- EJS (Zpočátku)
-- React (Do budoucna)
-- Redux (Do budoucna)
+- EJS
 
 
