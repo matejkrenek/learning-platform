@@ -30,7 +30,8 @@ const CourseSchema = new Schema({
     sections: [
         {
             type: Schema.Types.ObjectId,
-            ref: "section"
+            ref: "section",
+            default: []
         }
     ],
 });

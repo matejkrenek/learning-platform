@@ -1,5 +1,6 @@
-const User = require("../models/User")
-const Course = require("../models/Course")
+const User = require("../models/User");
+const Course = require("../models/Course");
+const Section = require("../models/Section");
 
 module.exports = {
     getAdmin: (req, res) => {
@@ -58,10 +59,10 @@ module.exports = {
         const courseID = req.params.courseID;
 
         Course.findById(courseID)
-            .collation("section")
-            .select("title", "sections")
+            .populate("sections")
             .then((course) => {
                 res.status(200).render("admin/sections", {course})
+                console.log(course)
             })
             .catch(err => console.log(err))
     },
@@ -70,7 +71,6 @@ module.exports = {
         const courseID = req.params.courseID;
 
         Course.findById(courseID)
-            .select("title")
             .then(course => {
                 res.render("admin/createSection", {course})
             })
@@ -96,35 +96,21 @@ module.exports = {
             })
         } else {
             Course.findById(courseID)
-                .collation("sections")
+                .populate("sections")
                 .then(course => {
-                    Object.entries(course.section).forEach(section => {
-
-                        // TODO: compare section.title and title in lowercase
-                        if(section.title === title){
-                            error.push({msg: `V kurzu ${course.title} již exisuje sekce se stejným pojmenování`})
-                            
-                            res.render("admin/createSection", {
-                                errors,
-                                title,
-                                description
-                            })
-                        } else {
-                            const newSection = new Section({
-                                title,
-                                description
-                            })
-
-                            course.sections.push(newSection)
-
-                            course.save().then(savedCourse => {
-                                newSection.save().then(savedSection => {
-                                    req.flash("success_msg", "Sekce byla úspěšně vytvořena")
-                                    res.redirect("/admin/sections")
-                                }).catch(err => console.log(err))
-                            }).catch(err => console.log(err))
-                        }
+                    const newSection = new Section({
+                        title,
+                        description
                     })
+
+                    course.sections.push(newSection)
+
+                    course.save().then(savedCourse => {
+                        newSection.save().then(savedSection => {
+                            req.flash("success_msg", "Sekce byla úspěšně vytvořena")
+                            res.redirect("/admin/sections")
+                        }).catch(err => console.log(err))
+                    }).catch(err => console.log(err)) 
                 })
                 .catch(err => console.log(err))
         }
