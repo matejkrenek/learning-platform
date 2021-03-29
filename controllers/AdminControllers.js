@@ -53,5 +53,80 @@ module.exports = {
         Course.find().then(courses => {
             res.status(200).render("admin/courses", {courses})
         }).catch(err => console.log(err))
+    },
+    getCoursesSections: (req, res) => {
+        const courseID = req.params.courseID;
+
+        Course.findById(courseID)
+            .collation("section")
+            .select("title", "sections")
+            .then((course) => {
+                res.status(200).render("admin/sections", {course})
+            })
+            .catch(err => console.log(err))
+    },
+
+    getCreateCoursesSection: (req, res) => {
+        const courseID = req.params.courseID;
+
+        Course.findById(courseID)
+            .select("title")
+            .then(course => {
+                res.render("admin/createSection", {course})
+            })
+            .catch(err => console.log(err))
+    },
+
+    createCoursesSection: (req, res) => {
+        const courseID = req.params.courseID;
+        const { title, description } = req.body;
+        let errors = [];
+
+        if(!title || !description){
+            errors.push({ msg: "Vyplňte prosím všechna pole" })
+        }
+
+        // TODO: validate creating sections better
+        
+        if(errors.length > 0){
+            res.render("admin/createSection", {
+                errors,
+                title,
+                description
+            })
+        } else {
+            Course.findById(courseID)
+                .collation("sections")
+                .then(course => {
+                    Object.entries(course.section).forEach(section => {
+
+                        // TODO: compare section.title and title in lowercase
+                        if(section.title === title){
+                            error.push({msg: `V kurzu ${course.title} již exisuje sekce se stejným pojmenování`})
+                            
+                            res.render("admin/createSection", {
+                                errors,
+                                title,
+                                description
+                            })
+                        } else {
+                            const newSection = new Section({
+                                title,
+                                description
+                            })
+
+                            course.sections.push(newSection)
+
+                            course.save().then(savedCourse => {
+                                newSection.save().then(savedSection => {
+                                    req.flash("success_msg", "Sekce byla úspěšně vytvořena")
+                                    res.redirect("/admin/sections")
+                                }).catch(err => console.log(err))
+                            }).catch(err => console.log(err))
+                        }
+                    })
+                })
+                .catch(err => console.log(err))
+        }
     }
 }
