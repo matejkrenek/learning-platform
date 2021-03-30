@@ -46,7 +46,7 @@ router.route("/create/course")
     .get(AdminControllers.createCoursePage)
     .post(upload.single("preview"), AdminControllers.createCourse)
 
-router.route("/courses/:courseID/sections")
+router.route("/course/:courseID/sections")
     .get(AdminControllers.getCoursesSections)
     
 router.route("/create/course/:courseID/section")

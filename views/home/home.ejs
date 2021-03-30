@@ -1,4 +1,4 @@
-<h1>courses</h1>
+<h1>Home</h1>
 <table>
     <thead>
         <tr>
@@ -9,7 +9,6 @@
             <th>Description</th>
             <th>Obrázek</th>
             <th>cta1</th>
-            <th>cta2</th>
         </tr>
     </thead>
     <tbody>
@@ -21,8 +20,7 @@
                 <td><%= course.requirements %></td>
                 <td><%= course.description %></td>
                 <td><img src="<%= course.previewImage %>" alt="" class="small--img"></td>
-                <td><a href="course/<%= course._id %>/sections">Zobrazit sekce</a></td>
-                <td><a href="create/course/<%= course._id %>/section">Vytvořit sekci</a></td>
+                <td><a href="home/<%= course._id %>">Zobrazit sekce</a></td>
             </tr>
         <% }) %>
     </tbody>

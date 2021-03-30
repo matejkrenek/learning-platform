@@ -8,8 +8,11 @@ module.exports = {
     },
 
     getRegisteredUsers: (req, res) => {
-        User.find().then(users => {
+        User.find()
+        .select("name role email")
+        .then(users => {
             res.status(200).render("admin/users", {users})
+            console.log(users)
         }).catch(err => console.log(err))
     }, 
 
@@ -51,7 +54,10 @@ module.exports = {
     },
 
     getCreatedCourses: (req, res) => {
-        Course.find().then(courses => {
+        Course.find()
+        .select("title difficutly requirements description previewImage")
+        .then(courses => {
+            console.log(courses)
             res.status(200).render("admin/courses", {courses})
         }).catch(err => console.log(err))
     },
@@ -60,7 +66,9 @@ module.exports = {
 
         Course.findById(courseID)
             .populate("sections")
+            .select("sections title")
             .then((course) => {
+                console.log(course)
                 res.status(200).render("admin/sections", {course})
                 console.log(course)
             })
@@ -71,7 +79,9 @@ module.exports = {
         const courseID = req.params.courseID;
 
         Course.findById(courseID)
+            .select("title")
             .then(course => {
+                console.log(course)
                 res.render("admin/createSection", {course})
             })
             .catch(err => console.log(err))
@@ -98,6 +108,7 @@ module.exports = {
             Course.findById(courseID)
                 .populate("sections")
                 .then(course => {
+                    console.log(course)
                     const newSection = new Section({
                         title,
                         description
