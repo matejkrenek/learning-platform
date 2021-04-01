@@ -68,9 +68,7 @@ module.exports = {
             .populate("sections")
             .select("sections title")
             .then((course) => {
-                console.log(course)
                 res.status(200).render("admin/sections", {course})
-                console.log(course)
             })
             .catch(err => console.log(err))
     },

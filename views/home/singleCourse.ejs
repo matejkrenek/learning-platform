@@ -1,0 +1,19 @@
+<h1>courses <%= course.title %></h1>
+<table>
+    <thead>
+        <tr>
+            <th>Pořadí</th>
+            <th>Název</th>
+            <th>Popis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% course.sections.forEach(section => { %>
+            <tr>
+                <td>1</td>
+                <td><%= section.title %></td>
+                <td><%= section.description %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
