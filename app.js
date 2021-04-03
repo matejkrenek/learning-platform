@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Ejs 
 app.use(expressLayouts)
 app.set("view engine", "ejs")
+app.set("layout", "index", "auth", "admin");
 
 // Express Session
 app.use(session({

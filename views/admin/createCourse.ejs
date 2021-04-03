@@ -1,25 +1,43 @@
-<h1>Create your course</h1>
-<form method="POST" enctype="multipart/form-data">
-    <div>
-        <label for="title">Název</label>
-        <input type="text" name="title" id="title" value="<%= typeof title !== "undefined" ? title : "" %>">
-    </div>  
-    <div>
-        <label for="difficulty">Obtížnost</label>
-        <input type="text" name="difficulty" id="difficulty" value="<%= typeof difficulty !== "undefined" ? difficulty : "" %>">
-    </div> 
-    <div>
-        <label for="preview">Náhled</label>
-        <input type="file" name="preview" id="preview">
-    </div> 
-    <div>
-        <label for="requirements">Požadavky</label>
-        <input type="text" name="requirements" id="requirements" value="<%= typeof requirements !== "undefined" ? requirements : "" %>">
-    </div>  
-    <div>
-        <label for="description">Popis</label>
-        <textarea name="description" id="description"><%= typeof description !== "undefined" ? description : "" %></textarea>
-    </div>  
-    <input type="submit">
-    <%- include("../partials/messages") %>
-</form>
+<div class="createCourse__container">
+    <div class="createCourse__left">
+        <%- include("../partials/messages") %>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="inputField">
+                <label for="title">Název Kurzu</label>
+                <input type="text" name="title" id="title" value="<%= typeof title !== "undefined" ? title : "" %>">
+            </div>
+            <div class="input__flexContainer">
+                <div class="inputField">
+                    <label for="difficulty">Obtížnost Kurzu</label>
+                    <input type="text" name="difficulty" id="difficulty" value="<%= typeof difficulty !== "undefined" ? difficulty : "" %>">
+                </div>
+                <div class="inputField">
+                    <label for="requirements">Požadavky na Kurz</label>
+                    <input type="text" name="requirements" id="requirements" value="<%= typeof requirements !== "undefined" ? requirements : "" %>">
+                </div>  
+            </div>
+            <div class="input__gridContainer">
+                <div class="inputField">
+                    <label for="preview">Obrázek Kurzu</label>
+                    <div class="uploadPreview__field">
+                        <input type="file" name="preview" id="preview">
+                        <div class="uploadPreview__field--ghost">
+                            <i class="ri-add-line"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="inputField">
+                    <label for="description">Popis Kurzu</label>
+                    <textarea name="description" id="description"><%= typeof description !== "undefined" ? description : "" %></textarea>
+                </div>  
+            </div>
+            <div class="btn__container">
+                <a href="/admin" class="btn btn--outlined">Zrušit</a>
+                <input type="submit" class="btn btn--filled" value="Vytvořit Kurz"> 
+            </div>
+        </form>
+    </div>
+    <div class="createCourse__right">
+        <div>JAvasdript</div>
+    </div>
+</div>

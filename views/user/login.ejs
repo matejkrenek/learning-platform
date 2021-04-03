@@ -1,13 +1,29 @@
-<h1>Login</h1>
-<form method="POST">
-    <div>
-        <label for="email">E-mailová Adresa</label>
-        <input type="email" name="email" id="email" value="<%= typeof email !== "undefined" ? email : "" %>">
-    </div>  
-    <div>
-        <label for="password">Heslo</label>
-        <input type="password" name="password" id="password">
-    </div>  
-    <input type="submit">
-    <%- include("../partials/messages") %>
-</form>
+<section class="auth-wrapper__left">
+    <div class="auth-wrapper__left__content">
+        <h1>Pomocte nám být lepší</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer pellentesque quam vel velit. In enim a arcu imperdiet malesuada. Curabitur vitae diam non enim vestibulum interdum. Phasellus faucibus molestie nisl. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+        <a href="#" class="btn btn--outlined">Zjistit více</a>
+    </div>
+</section>
+<section class="auth-wrapper__right">
+    <form method="POST">
+        <div class="auth-wrapper__right__header">
+            <h2>Vítejte zpět</h2>
+            <p>Ještě nemám účet? <a href="/user/register" class="link--normal"> Zaregistrujte se</a></p>
+        </div>
+        <%- include("../partials/messages") %>
+        <div class="auth-wrapper__right__body">
+            <div class="inputField">
+                <label for="email">E-mailová adresfa</label>
+                <input type="email" name="email" id="email" value="<%= typeof email !== "undefined" ? email : "" %>">
+            </div>
+            <div class="inputField">
+                <label for="password">Heslo</label>
+                <input type="password" name="password" id="password" >
+            </div>
+            <div class="btn__container">
+                <input type="submit" class="btn btn--filled" value="Přihlásit se"> 
+            </div>
+        </div>
+    </form>
+</section>

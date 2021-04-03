@@ -1,0 +1,20 @@
+<%- include("../partials/navbar") %>
+<h1>courses <%= section.title %></h1>
+<table>
+    <thead>
+        <tr>
+            <th>Pořadí</th>
+            <th>Název</th>
+            <th>Popis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% section.lessons.forEach(lesson => { %>
+            <tr>
+                <td>1</td>
+                <td><%= lesson.title %></td>
+                <td><%= lesson.description %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

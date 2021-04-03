@@ -1,0 +1,40 @@
+.alertMessage{
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    .alertMessage__left{
+        display: flex;
+        align-items: center;
+        i{
+            margin-right: 12px;
+        }
+        p{
+            line-height: 120%;
+        }
+    }
+    .alertMessage__right{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+}
+
+.alertMessage.error{
+    background-color: #E66063;
+    i.success{
+        display: none;
+    }
+
+}
+
+.alertMessage.success{
+    background-color: rgba(39, 137, 75, 0.75);
+    i.error{
+        display: none;
+    }
+}

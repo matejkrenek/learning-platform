@@ -4,11 +4,11 @@ const passport = require("passport")
 
 module.exports = {
     getLogin: (req, res) => {
-        res.render("user/login")
+        res.render("user/login", {layout: "auth"})
     },
 
     getRegister: (req, res) => {
-        res.render("user/register")
+        res.render("user/register", {layout: "auth"})
     },
 
     registerUser: (req, res) => {
@@ -32,6 +32,7 @@ module.exports = {
 
         if(errors.length > 0){
             res.render("user/register", {
+                layout: "auth",
                 errors,
                 first,
                 last,
@@ -43,6 +44,7 @@ module.exports = {
                     // User already exists
                     errors.push({ msg: "Uživatel s touto emailovou adresou již existuje" })
                     res.render("user/register", {
+                        layout: "auth",
                         errors,
                         first,
                         last,

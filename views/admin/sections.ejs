@@ -1,10 +1,11 @@
-<h1>courses <%= course.title %></h1>
 <table>
     <thead>
         <tr>
             <th>Pořadí</th>
             <th>Název</th>
             <th>Popis</th>
+            <th>cta1</th>
+            <th>cta2</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +14,10 @@
                 <td>1</td>
                 <td><%= section.title %></td>
                 <td><%= section.description %></td>
+                <td><a href="/admin/section/<%= section._id %>/lessons">Zobrazit lekce</a></td>
+                <td><a href="/admin/create/section/<%= section._id %>">Vytvořit Lekci</a></td>
             </tr>
         <% }) %>
     </tbody>
 </table>
+

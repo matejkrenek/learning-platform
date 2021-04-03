@@ -8,5 +8,9 @@ router.route("/")
 
 
 router.route("/course/:courseID")
-    .get(HomeControllers.sectionPage)
+    .get(HomeControllers.sectionsPage)
+
+router.route("/course/section/:sectionID")
+    .get(HomeControllers.lessonsPage)
+
 module.exports = router

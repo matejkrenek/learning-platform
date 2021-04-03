@@ -53,4 +53,11 @@ router.route("/create/course/:courseID/section")
     .get(AdminControllers.getCreateCoursesSection)
     .post(AdminControllers.createCoursesSection)
 
+router.route("/create/section/:sectionID")
+    .get(AdminControllers.getCreateSectionsLesson)
+    .post(AdminControllers.createSectionsLesson)
+
+router.route("/section/:sectionID/lessons")
+    .get(AdminControllers.getSectionsLessons)
+
 module.exports = router
