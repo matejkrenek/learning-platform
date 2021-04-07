@@ -75,7 +75,6 @@ textarea{
         right: 18px;
         border-radius: 5px;
         border: 4px dashed #F6F6FA;
-        pointer-events: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -83,6 +82,37 @@ textarea{
         > i{
             font-size: 64px;
             color: #F6F6FA;
+        }
+
+        > .uploadPreview__previewImage{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 2px;
+            left: 0;
+            > img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            > .uploadPreview__remove{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                border-radius: 50%;
+                transform: translate(50%, -50%);
+                background-color: #000;
+            }
+        }
+
+        &.uploaded{
+            border: none;
+            > i{
+                display: none;
+            }
         }
 
     }

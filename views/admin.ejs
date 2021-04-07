@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="/js/index.js"></script>
+    <script defer src="/js/fileUploader.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/main.css">
-    <title>Bingule - <%= title %></title>
+    <title>Bingule - <%= pageTitle %></title>
 </head>
 <body>
     <div class="admin__wrapper">
@@ -54,7 +55,7 @@
                 </div>
             </header>
             <section class="admin__content__body">
-                <h2 class="admin__body--title"><%= title %></h2>
+                <h2 class="admin__body--title"><%= pageTitle %></h2>
                 <%-body%>
             </section>
         </main>

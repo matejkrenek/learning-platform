@@ -80,7 +80,7 @@ module.exports = {
 
     loginUser: (req, res, next) => {
         passport.authenticate("local", {
-            successRedirect: req.user === "admin" ? "/admin" : "/dashboard",
+            successRedirect: "/admin/create/course",
             failureRedirect: "/user/login",
             failureFlash: true,
         })(req, res, next);
