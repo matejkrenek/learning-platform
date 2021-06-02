@@ -1,0 +1,42 @@
+<h4 class="adminContainer__main__title">Všechny kurzy</h4>
+<div class="adminContainer__main__container">
+    <div class="tableContainer">
+        <table class="table--primary">
+            <thead>
+                <tr>
+                    <th>Náhled</th>
+                    <th>Název</th>
+                    <th>obtížnost</th>
+                    <th>požadavky</th>
+                    <th>popis</th>
+                    <th>počet sekcí</th>
+                    <th>akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach(course => { %>
+                    <tr>
+                        <td><img src="<%= course.previewImage %>" alt="<%= course.title %>" class="courseCard__preview"></td>
+                        <td><%= course.name %></td>
+                        <td><%= course.difficulty %></td>
+                        <td><%= course.requirements %></td>
+                        <td title="<%= course.description%>"><%= course.description.split(" ", 4).join(" ")%>...</td>
+                        <td><%= `${course.sections.length} ${course.sections.length > 0 && course.sections.length < 5 ? "sekce" : "sekcí"}`  %></td>
+                        <td>
+                            <div class="courseCard__options">
+                                <button class="courseCard__options__button"><i class="fas fa-ellipsis-h"></i></button>
+                                <div class="courseCard__options__dropdown">
+                                    <ul>
+                                        <li><a href=""><i class="far fa-eye"></i>  Náhled</a></li>
+                                        <li><a href=""><i class="far fa-trash-alt"></i> Vymazat</a></li>
+                                        <li><a href=""><i class="far fa-edit"></i> Upravit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

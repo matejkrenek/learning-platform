@@ -1,0 +1,67 @@
+<h4 class="adminContainer__main__title">Vytvořit kurz</h4>
+<div class="adminContainer__main__container">
+    <div class="adminContainer__createCourse">
+        <div class="stepper">
+            <ul class="stepper__list">
+                <li class="stepper__step active">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">1</span>
+                        <span class="stepper__step__title">Základní informace</span>
+                    </a>
+                </li>
+                <li class="stepper__step">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">2</span>
+                        <span class="stepper__step__title">Tvorba sekcí</span>
+                    </a>
+                </li>
+                <li class="stepper__step">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">3</span>
+                        <span class="stepper__step__title">Tvorba lekcí</span>
+                    </a>
+                </li>
+                <li class="stepper__step">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">4</span>
+                        <span class="stepper__step__title">Shrnutí</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="adminContainer__createCourse__form">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="inputContainer">
+                    <label for="name">Název Kurzu</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="inputContainer__half">
+                    <div class="inputContainer">
+                        <label for="difficulty">Obtížnost Kurzu</label>
+                        <select name="difficulty" id="difficulty">
+                            <option value="začátečník">Začátečník</option>
+                            <option value="středně pokročilý">Středně Pokročilý</option>
+                            <option value="pokročilý">Pokročilý</option>
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="requirements">Požadavky Kurzu</label>
+                        <input type="text" name="requirements" id="requirements">
+                    </div>
+                </div>
+                <div class="inputContainer">
+                    <label for="preview">Náhled kurzu</label>
+                    <input type="file" name="preview" id="preview">
+                </div>
+                <div class="inputContainer">
+                    <label for="description">Popis Kurzu</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <div class="buttonContainer">
+                    <a href="/admin" class="btn btn--green">Zrušit</a>
+                    <input type="submit" class="btn btn--green btn--filled" value="Pokračovat">
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>

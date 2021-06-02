@@ -1,0 +1,14 @@
+.authContainer{
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: color(white, base);
+    border-radius: 5px;
+    padding: 38px 32px 32px;
+    box-shadow: 0 8px 24px rgba($color: #22405F, $alpha: 0.05);
+    input[type="submit"]{
+        width: 100%;
+    }
+    .authContainer__header{
+        margin-bottom: 42px;
+    }
+}

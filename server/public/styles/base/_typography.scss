@@ -1,0 +1,36 @@
+h1, h2, h3, .section--h1, .section--h2, .section--h3{
+    font-weight: font(fontWeight, extraBold);
+    line-height: font(lineHeight, medium);
+}
+
+h4, h5, h6, .section--h4, .section--h5, .section--h6{
+    font-weight: font(fontWeight, bold);
+    line-height: font(lineHeight, medium);
+}
+
+h1, .section--h1{
+    font-size: font(fontSize, headline1);
+}
+
+h2, .section--h2{
+    font-size: font(fontSize, headline2);
+}
+
+h3, .section--h3{
+    font-size: font(fontSize, headline3);
+}
+
+h4,.section--h4{
+    font-size: font(fontSize, headline4);
+}
+
+p, span, input, button, a{
+    font-size: font(fontSize, base);
+    font-weight: font(fontWeight, base);
+    line-height: font(lineHeight, large);
+}
+
+.text--bold{
+    font-weight: font(fontWeight, bold);
+
+}

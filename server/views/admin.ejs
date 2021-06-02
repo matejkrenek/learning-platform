@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="/js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>We Development Kurzy | Bingule</title>
+</head>
+<body >
+    <div class="adminContainer row">
+        <aside class="adminContainer__sidebar">
+            <header class="adminContainer__sidebar__header">
+                <a href="/" class="logo">
+                    <img src="/images/logo-white.svg" alt="logo">
+                </a>
+            </header>
+            <nav class="adminContainer__sidebar__navbar">
+                <ul>
+                    <li><a href="/admin"><i class="fas fa-home"></i> Nástěnka</a></li>
+                    <li><a href="/admin/courses"><i class="fas fa-book"></i> Kurzy</a></li>
+                    <li><a href="/admin/users"><i class="fas fa-users"></i> Uživatelé</a></li>
+                    <li><a href="/admin/create/course"><i class="fas fa-plus"></i> Vytvořit kurz</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="adminContainer__content">
+            <header class="adminContainer__content__header">
+                <div class="adminContainer__header__left"></div>
+                <div class="adminContainer__header__right"></div>
+            </header>
+            <main class="adminContainer__content__main">
+                <%- body %>
+            </main>
+            <%- include("./partials/messages") %>
+        </div>
+    </div>
+</body>
+</html>

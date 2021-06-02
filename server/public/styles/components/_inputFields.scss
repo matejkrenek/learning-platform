@@ -1,0 +1,130 @@
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    label{
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    input, select, textarea{
+        height: 44px;
+        outline: none;
+        border: 1px solid color(black, lighter);
+        border-radius: 4px;
+        padding: 12px 16px;
+        color: color(black, base);
+        appearance: none;
+        font-family: font(fontFamily, base);
+        font-size: font(fontSize, base);
+    }
+    textarea{
+        resize: vertical;
+        min-height: 150px;
+        max-height: 400px;
+    }
+}
+
+.inputContainer__half{
+    display: flex;
+    justify-content: space-between;
+    .inputContainer{
+        width: 48%;
+    }
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    a:first-child{
+        margin-right: 30px;
+    }
+}
+
+.createSection__formContainer{
+    background-color: color(white, base);
+    border: 1px solid color(black, lighter);
+    padding: 12px 18px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    .streched__content{
+        display: none;
+    }
+    .rolled__content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .rolled__content__cta{
+            display: flex;
+            span{
+                margin-left: 12px;
+                color: color(black, lighter);
+                cursor: pointer;
+                font-size: 18px;
+                transition: color 0.3s ease;
+                &:hover{
+                    color: color(black, base);
+                }
+            }
+        }
+    }
+    &.streched{
+        padding: 32px;
+        .streched__content{
+            display: block;
+        }
+        .rolled__content{
+            display: none;
+        }
+        &.rolled{
+            .rolled__content{
+                display: flex;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+
+.streched__content{
+    ul{
+        li{
+            margin-bottom: 8px;
+            margin-left: 12px;
+            span{
+                cursor: pointer;
+            }
+        }
+    }
+    .createLink{
+        color: color(black, lighter);
+        cursor: pointer;
+        i{
+            margin-right: 8px;
+        }
+        &:hover{
+            color: color(black, light)
+        }
+    }
+}
+
+.createSection__createContainer{
+    border: 2px dashed color(black, lighter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px 18px;
+    color: color(black, lighter);
+    border-radius: 5px;
+    margin-bottom: 24px;
+    i, span{
+        font-size: 18px; 
+    }
+    i{
+    margin-right: 12px;
+    }
+
+    &:hover{
+        background-color: color(white, light);
+    }
+}

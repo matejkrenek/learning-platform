@@ -1,0 +1,66 @@
+.stepper{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 64px;
+    .stepper__list{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        .stepper__step{
+            position: relative;
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .stepper__step__number{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    background-color: color(white, base);
+                    color: color(black, greyish);
+                    border: 1px solid color(black, greyish);
+                    margin-bottom: 8px;
+                }
+                .stepper__step__title{
+                    color: color(black, greyish);
+                    max-width: 100px;
+                    text-align: center;
+                    line-height: 120%;
+                    font-size: 14px;
+                }
+            }
+            &:not(:first-child)::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                right: 50%;
+                top: 18px;
+                z-index: -1;
+                height: 6px;
+                border: 1px solid color(black, greyish);
+                background-color: color(white, base);
+            }
+            &.active{
+                .stepper__step__number{
+                    background-color: color(black, base);
+                    color: color(white, base);
+                    border: 1px solid color(black, base);
+                }
+                .stepper__step__title{
+                    color: color(black, base);
+                }
+                &:not(:first-child)::before{
+                    border: 1px solid color(black, base);
+                    background-color: color(black, base);
+                }
+            }
+        }
+    }
+}

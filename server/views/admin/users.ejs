@@ -1,0 +1,40 @@
+<h4 class="adminContainer__main__title">Všichni uživatelé</h4>
+<div class="adminContainer__main__container">
+    <div class="tableContainer">
+        <table class="table--primary">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Jméno</th>
+                    <th>Příjmení</th>
+                    <th>E-mailová adresa</th>
+                    <th>Pravomoce</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user._id %></td>
+                        <td><%= user.name.first %></td>
+                        <td><%= user.name.last %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.role %></td>
+                        <td>
+                            <div class="courseCard__options">
+                                <button class="courseCard__options__button"><i class="fas fa-ellipsis-h"></i></button>
+                                <div class="courseCard__options__dropdown">
+                                    <ul>
+                                        <li><a href=""><i class="far fa-eye"></i>  Náhled</a></li>
+                                        <li><a href=""><i class="far fa-trash-alt"></i> Vymazat</a></li>
+                                        <li><a href=""><i class="far fa-edit"></i> Upravit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

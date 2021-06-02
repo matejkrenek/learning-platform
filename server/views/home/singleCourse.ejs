@@ -1,0 +1,21 @@
+<header class="pageContent__header--secondary column">
+    <div class="pageContent__header__preview">
+        <img src="<%= course.previewImage %>" alt="course preview">
+    </div>
+    <h1 class="section--h2"><%= course.title %></h1>
+    <p><%= course.description %></p>
+</header>
+<section class="pageContent__sections column">
+    <% course.sections.forEach(({title, description, lessons}) => { %>
+        <article class="sectionCard">
+            <h3><%= title %></h3>
+            <p><%= description %></p>
+            <ul>
+                <% lessons.forEach(({ _id, title }) => { %> 
+                    <li><a href="/home/course/<%= course._id %>/lesson/<%= _id %>"><%= title %></a></li>
+                <% }) %>
+            </ul>
+        </article>
+    <% }) %>
+    
+</section>

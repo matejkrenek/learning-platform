@@ -1,0 +1,22 @@
+.courseCard{
+    background-color: color(white, base);
+    border-radius: 5px;
+    box-shadow: 0 8px 24px rgba($color: #22405F, $alpha: 0.05);
+    a{
+        padding: 38px 32px 32px;
+    }
+}
+
+.courseCard__preview{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 18px;
+}
+
+.courseCard__title{
+    margin-bottom: 10px;
+}
+
+.courseCard__meta{
+    color: color(black, light);
+}

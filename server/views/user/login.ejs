@@ -1,0 +1,21 @@
+<div class="authContainer">
+    <div class="authContainer__header">
+        <h1 class="section--h2">Přihlášení</h1>
+        <p>Ještě nemáte účet? <a href="/user/register">Zaregistrujte se</a></p>
+    </div>
+    <form method="POST">
+        <%- include("../partials/messages") %>
+            <div class="inputContainer">
+                <label for="email">E-mailová adresa</label>
+                <input type="email" name="email" id="email" value="<%= typeof email !== "undefined" ? email : "" %>">
+            </div>
+            <div class="inputContainer">
+                <label for="password">Heslo</label>
+                <input type="password" name="password" id="password" >
+            </div>
+            <div class="buttonContainer">
+                <input type="submit" class="btn btn--green btn--filled" value="Přihlásit se">
+            </div>
+        </div>
+    </form>
+</div>

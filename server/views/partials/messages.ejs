@@ -1,0 +1,57 @@
+<% if(error.length !== 0 || error_msg.length !== 0 || success_msg.length !== 0  || typeof errors !== "undefined") { %>
+    <div class="alertMessages__container">
+        <% if(typeof errors !== "undefined") { %>
+            <% errors.forEach(error => { %>
+                <div class="alertMessage error">
+                    <div class="alertMessage__icon">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="alertMessage__content">
+                        <p><%= error.msg %></p>
+                    </div>
+                    <span class="alertMessage__timer"></span>
+                </div>
+            <%})%>
+        <% } %>
+        
+        <% if(success_msg.length !== 0) { %>
+            <div class="alertMessage success">
+                <div class="alertMessage__icon">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alertMessage__content">
+                    <p><%= success_msg %></p>
+                </div>
+                <span class="alertMessage__timer"></span>
+            </div>
+        <% } %>
+        
+        <% if(error_msg.length !== 0) { %>
+            <div class="alertMessage error">
+                <div class="alertMessage__icon">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alertMessage__content">
+                    <p><%= error_msg %></p>
+                </div>
+                <span class="alertMessage__timer"></span>
+            </div>
+        <% } %>
+        
+        <% if(error.length !== 0) { %>
+            <div class="alertMessage error">
+                <div class="alertMessage__icon">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="alertMessage__content">
+                    <p><%= error %></p>
+                </div>
+                <span class="alertMessage__timer"></span>
+            </div>
+        <% } %>
+    </div>
+<% } %>

@@ -1,0 +1,89 @@
+<form method="POST">
+    <div>
+        <label for="title">Název</label>
+        <input type="text" name="title" id="title" value="<%= typeof title !== "undefined" ? title : "" %>">
+    </div>  
+    <div class="richTextEditor">
+        <div id="richTextEditor__input">
+            <button type="button" data-cmd="justifyLeft" class="richTextEditor__toolBtn">
+                <i class="fas fa-align-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="justifyCenter" class="richTextEditor__toolBtn">
+                <i class="fas fa-align-center" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="justifyRight" class="richTextEditor__toolBtn">
+                <i class="fas fa-align-right" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="justifyFull" class="richTextEditor__toolBtn">
+                <i class="fas fa-align-justify" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="bold" class="richTextEditor__toolBtn">
+                <i class="fas fa-bold" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="italic" class="richTextEditor__toolBtn">
+                <i class="fas fa-italic" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="underline" class="richTextEditor__toolBtn">
+                <i class="fas fa-underline" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="insertUnorderedList" class="richTextEditor__toolBtn">
+                <i class="fas fa-list-ul" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="insertOrderedList" class="richTextEditor__toolBtn">
+                <i class="fas fa-list-ol" aria-hidden="true"></i>
+            </button>
+            <div class="richTextEditor__dropdown">
+                <button type="button" data-cmd="insertImage" class="richTextEditor__toolBtn">
+                    <i class="far fa-file-image" aria-hidden="true"></i>
+                </button>
+                <div class="richTextEditor__dropdown__menu">
+                    <p>Vložte link obrázku nebo jej nahrejte</p>
+                    <input type="url">
+                    <input type="file">
+                    <button type="button">aplikovat</button>
+                </div>
+            </div>
+            <div class="richTextEditor__dropdown">
+                <button type="button" data-cmd="createLink" class="richTextEditor__toolBtn">
+                    <i class="fas fa-link" aria-hidden="true"></i>
+                </button>
+                <div class="richTextEditor__dropdown__menu">
+                    <p>Vložte link obrázku nebo jej nahrejte</p>
+                    <input type="url">
+                    <button type="button">aplikovat</button>
+                </div>
+            </div>
+
+            <button type="button" data-cmd="undo">
+                <i class="fas fa-undo-alt" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="redo">
+                <i class="fas fa-redo-alt" aria-hidden="true"></i>
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h1">
+                H1
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h2">
+                H2
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h3">
+                H3
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h4">
+                H4
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h5">
+                H5
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="h6">
+                H6
+            </button>
+            <button type="button" data-cmd="formatBlock" data-element="p">
+                P
+            </button>
+        </div>
+        <div contenteditable id="richTextEditor__output"></div>
+    </div>
+    <input type="submit">
+    <%- include("../partials/messages") %>
+</form>

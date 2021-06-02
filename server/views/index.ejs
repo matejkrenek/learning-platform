@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>We Development Kurzy | Bingule</title>
+</head>
+<body>
+    <div class="siteContainer">
+        <header class="navbar">
+            <div class="navbar__brand">
+                <a href="/" class="logo">
+                    <img src="/images/logo.svg" alt="logo">
+                </a>
+            </div>
+            <nav class="navbar__content">
+                <ul class="navbar__content__nav">
+                    <% if(user === undefined){ %>
+                        <li class="nav__item">
+                            <a href="/user/login" class="btn btn--green">Přihlásit se</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/user/register" class="btn btn--green btn--filled">Registrovat</a>
+                        </li>
+                    <% } else{ %>
+                        <li class="nav__item">
+                            <a href="/user/logout" class="btn btn--green"><i class="fas fa-sign-out-alt"></i> Odhlásit</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </nav>
+        </header>
+        <main class="pageContent">
+            <%- body %>
+        </main>
+    </div>
+</body>
+</html>

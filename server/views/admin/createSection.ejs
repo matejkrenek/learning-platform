@@ -1,0 +1,79 @@
+<h4 class="adminContainer__main__title">Vytvořit kurz</h4>
+<div class="adminContainer__main__container">
+    <div class="adminContainer__createCourse">
+        <div class="stepper">
+            <ul class="stepper__list">
+                <li class="stepper__step active">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">1</span>
+                        <span class="stepper__step__title">Základní informace</span>
+                    </a>
+                </li>
+                <li class="stepper__step active">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">2</span>
+                        <span class="stepper__step__title">Tvorba sekcí</span>
+                    </a>
+                </li>
+                <li class="stepper__step">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">3</span>
+                        <span class="stepper__step__title">Tvorba lekcí</span>
+                    </a>
+                </li>
+                <li class="stepper__step">
+                    <a href="">
+                        <span class="stepper__step__number section--h4">4</span>
+                        <span class="stepper__step__title">Shrnutí</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="adminContainer__createCourse__form">
+            <% if(course.sections.length > 0){ %>
+                <% course.sections.forEach(section => { %>
+                    <div class="createSection__formContainer">
+                        <div class="rolled__content">
+                            <h4><%= section.title || section.name  %></h4>
+                            <div class="rolled__content__cta">
+                                <span><i class="far fa-edit"></i></span>
+                                <span><i class="far fa-trash-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+                <div class="createSection__createContainer">
+                    <i class="fas fa-plus"></i>
+                    <span>Vytvořit sekci</span>
+                </div>
+                <div class="buttonContainer">
+                    <a href="/admin" class="btn btn--green">Zrušit</a>
+                    <input type="submit" class="btn btn--green btn--filled" value="Pokračovat">
+                </div>
+            <% } else { %>
+                <div class="createSection__formContainer streched">
+                    <div class="rolled__content">
+                        <h4></h4>
+                        <div class="rolled__content__cta">
+                            <span><i class="far fa-edit"></i></span>
+                            <span><i class="far fa-trash-alt"></i></span>
+                        </div>
+                    </div>
+                    <form class="streched__content">
+                        <div class="inputContainer">
+                            <label for="name">Název Sekce</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="inputContainer">
+                            <label for="description">Popis Sekce</label>
+                            <textarea name="description" id="description"></textarea>
+                        </div>
+                        <div class="buttonContainer">
+                            <input type="submit" class="btn btn--black" value="Vytvořit">
+                        </div>
+                    </form>
+                </div>
+            <% } %>
+        </div>  
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<header class="pageContent__header--primary column">
+    <h1>we development kurzy</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore praesentium aliquam ad libero iure dolorem numquam eos nostrum quisquam temporibus. Totam?</p>
+</header>
+<section class="pageContent__courses">
+    <% if(courses.length > 0) { %>
+        <% courses.forEach(({ _id, title, previewImage, sections }) => { %>
+            <article class="column courseCard">
+                <a href="/home/course/<%= _id %>">
+                    <img src="<%= previewImage %>" alt="<%= title %>" class="courseCard__preview">
+                    <h4 class="courseCard__title"><%= title %></h4>
+                    <div class="row courseCard__meta">
+                        <% let lessonsCounter = 0 %>
+                        <% sections.forEach(({ lessons }) => lessonsCounter += lessons.length) %>
+                        <p><%= sections.length %> sekce ∙ <%= lessonsCounter %> lekce</p>
+                    </div>
+                </a>
+            </article>
+        <% }) %>
+    <% } else { %>
+        <div class="emptyMessage">
+            <p>Žádné kurzy</p>
+        </div>
+    <% } %>
+</section>

@@ -1,0 +1,69 @@
+.adminContainer__courses{
+    .adminContainer__singleCourse{
+        display: flex;
+        align-items: center;
+        padding: 6px 32px 6px 6px;
+        .courseCard__preview{
+            margin-right: 24px;
+            border-radius: 5px;
+            margin-bottom: 0px !important;
+            height: 65px;
+            width: 65px;
+        }
+        margin-bottom: 18px;
+    }
+}
+
+.courseCard__options{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    .courseCard__options__button{
+        padding: 8px;
+        cursor: pointer;
+        line-height: 100%;
+        z-index: 1;
+        background-color: transparent;
+        border: none;
+        color: color(black, light);
+        font-size: 18px;
+        transition: color 0.3s;
+        &:hover{
+            color: color(black, base);
+        }
+    }
+
+    .courseCard__options__dropdown{
+        position: absolute;
+        background-color: color(black, base);
+        border-radius: 5px;
+        top: 36px;
+        right: -64px;
+        display: none;
+        z-index: 10;
+        overflow: hidden;
+        ul{
+            li{
+                pointer-events: all;
+                background-color: color(black, base);
+                color: color(white, base);
+                &:hover{
+                    background-color: rgba($color: #000000, $alpha: 0.25);
+                }
+                a{
+                    display: block;
+                    padding: 8px 12px;
+                    font-size: 14px;
+                    i{
+                        width: 18px;
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+        &.active{
+            display: block;
+        }
+    }
+}

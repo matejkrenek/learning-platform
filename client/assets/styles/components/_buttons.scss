@@ -1,0 +1,28 @@
+.btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: color(black, base);
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: font(fontWeight, extraBold);
+    font-family: font(fontFamily, base);
+}
+
+.btn--green{
+    color: color(green, base);
+    &.btn--filled{
+        border: 2px solid color(green, base);
+        background-color: color(green, light);
+        transition: background-color 0.1s ease;
+        &:hover{
+            background-color: color(green, base);
+            color: color(white, base);
+        }
+    }
+}
+
+.btn--black{
+    background-color: color(black, base);
+    color: color(white, base);
+}

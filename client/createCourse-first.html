@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./assets/scripts/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <title>We Development Kurzy | Bingule</title>
+</head>
+<body >
+    <div class="adminContainer row">
+        <aside class="adminContainer__sidebar">
+            <header class="adminContainer__sidebar__header">
+                <a href="/" class="logo">
+                    <img src="./assets/images/logo-white.svg" alt="logo">
+                </a>
+            </header>
+            <nav class="adminContainer__sidebar__navbar">
+                <ul>
+                    <li><a href=""><i class="fas fa-home"></i> Nástěnka</a></li>
+                    <li><a href=""><i class="fas fa-book"></i> Kurzy</a></li>
+                    <li><a href=""><i class="fas fa-users"></i> Uživatelé</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="adminContainer__content">
+            <header class="adminContainer__content__header">
+                <div class="adminContainer__header__left"></div>
+                <div class="adminContainer__header__right"></div>
+            </header>
+            <main class="adminContainer__content__main">
+                <h4 class="adminContainer__main__title">Vytvořit kurz</h4>
+                <div class="adminContainer__main__container">
+                    <div class="adminContainer__createCourse">
+                        <div class="stepper">
+                            <ul class="stepper__list">
+                                <li class="stepper__step active">
+                                    <a href="">
+                                        <span class="stepper__step__number section--h4">1</span>
+                                        <span class="stepper__step__title">Základní informace</span>
+                                    </a>
+                                </li>
+                                <li class="stepper__step">
+                                    <a href="">
+                                        <span class="stepper__step__number section--h4">2</span>
+                                        <span class="stepper__step__title">Tvorba sekcí</span>
+                                    </a>
+                                </li>
+                                <li class="stepper__step">
+                                    <a href="">
+                                        <span class="stepper__step__number section--h4">3</span>
+                                        <span class="stepper__step__title">Tvorba lekcí</span>
+                                    </a>
+                                </li>
+                                <li class="stepper__step">
+                                    <a href="">
+                                        <span class="stepper__step__number section--h4">4</span>
+                                        <span class="stepper__step__title">Shrnutí</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="adminContainer__createCourse__form">
+                            <form action="">
+                                <div class="inputContainer">
+                                    <label for="name">Název Kurzu</label>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div class="inputContainer__half">
+                                    <div class="inputContainer">
+                                        <label for="difficulty">Obtížnost Kurzu</label>
+                                        <select name="difficulty" id="difficulty">
+                                            <option value="začátečník">Začátečník</option>
+                                            <option value="středně pokročilý">Středně Pokročilý</option>
+                                            <option value="pokročilý">Pokročilý</option>
+                                        </select>
+                                    </div>
+                                    <div class="inputContainer">
+                                        <label for="requirements">Požadavky Kurzu</label>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="inputContainer">
+                                    <label for="description">Popis Kurzu</label>
+                                    <textarea name="description" id="description"></textarea>
+                                </div>
+                                <div class="buttonContainer">
+                                    <a href="admin.html" class="btn btn--green">Zrušit</a>
+                                    <a href="createCourse-second.html" class="btn btn--green btn--filled">Pokračovat</a>
+                                    <!--<input type="submit" class="btn btn--green btn--filled" value="Pokračovat">-->
+                                </div>
+                            </form>
+                        </div>  
+                    </div>
+                </div>
+            </main>
+            <!--
+            <div class="alertMessages__container">
+                <div class="alertMessage success">
+                    <div class="alertMessage__icon">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="alertMessage__content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <span class="alertMessage__timer"></span>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</body>
+</html>

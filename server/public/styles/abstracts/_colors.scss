@@ -1,0 +1,35 @@
+$colors: (
+    black: (
+        base: #22405F,
+        light: rgba(32, 64, 95, 0.5),
+        greyish: rgba(32, 64, 95, 0.25),
+        lighter: rgba(32, 64, 95, 0.1),
+    ),
+
+    white: (
+        base: #ffffff,
+        dark: #FCFCFE,
+        light: #FDFDFE
+    ),
+
+    green: (
+        base: #0FB582,
+        light: rgba(15, 181, 130, 0.06),
+    ),
+
+    red: (
+        base: #D90429,
+    ),
+
+    orange: (
+        base: #FF8F00,
+    ),
+
+    yellow: (
+        base: #FBCD02,
+    ),
+
+    blue: (
+        base: #32C5FF,
+    )
+)

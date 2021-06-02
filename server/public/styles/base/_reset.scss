@@ -1,0 +1,30 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: color(white, dark);
+    color: color(black, base);
+    font-family: font(fontFamily, base);
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    color: unset;
+    text-decoration: none;
+}
+
+.siteContainer{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.section--link{
+    font-weight: font(fontWeight, bold);
+    text-decoration: underline;
+}

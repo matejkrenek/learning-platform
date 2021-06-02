@@ -1,0 +1,29 @@
+/*******************
+    FONT VARIABLES
+ *******************/
+$fonts: (
+    fontFamily: (
+        base: "Mulish",
+    ),
+
+    fontSize: (
+        base: 16px,
+        headline1: 72px,
+        headline2: 48px,
+        headline3: 32px,
+        headline4: 24px,
+    ),
+
+    fontWeight: (
+        base: 400,
+        bold: 600,
+        extraBold: 800,
+    ),
+
+    lineHeight: (
+        base: 100%,
+        medium: 120%,
+        large: 180%,
+    ),
+
+)

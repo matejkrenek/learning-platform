@@ -1,0 +1,34 @@
+.tableContainer{
+    table{
+        box-shadow: 0 8px 24px rgba($color: #22405F, $alpha: 0.05);
+        border-collapse: collapse;
+        width: 100%;
+        thead{
+            tr{
+                background-color: #f2f2f2;
+                th{
+                    &:hover{
+                        background-color: color(black, lighter);
+                    }
+                    padding: 12px;
+                    text-align: start;
+                }
+            }
+        }
+        tbody{
+            tr{
+                &:hover{
+                    background-color: color(white, light);
+                }
+                background-color: color(white, base);
+                td{
+                    padding: 12px;
+                    text-align: start;
+                    .courseCard__options{
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}
